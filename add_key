@@ -10,5 +10,5 @@ fi
 
 echo "Adding key for $HOURS hours"
 
-ssh-add -t ${HOURS}H $(dirname $0)/id_rsa
+ssh-add -t ${HOURS}H $(dirname $0)/../.ssh/id_rsa
 osascript -e 'tell application "Finder" to eject "secrets"'
