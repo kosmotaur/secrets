@@ -4,11 +4,11 @@ HOURS=$1
 
 if [ -z $HOURS ]; then
   echo "Usage: $0 <num hours>"
-  HOURS="10"
+  HOURS="2"
   echo "Defaulting to $HOURS hours"
 fi
 
 echo "Adding key for $HOURS hours"
 
 ssh-add -t ${HOURS}H $(dirname $0)/id_rsa
-diskutil unmount force $(dirname $0)
+osascript -e 'tell application "Finder" to eject "secrets"'
